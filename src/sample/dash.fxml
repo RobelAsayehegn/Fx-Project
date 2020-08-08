@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<!--<?import javafx.scene.effect.Light.Distant?>-->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DashboardController">
+    <children>
+      <Pane prefHeight="607.0" prefWidth="728.0" style="-fx-background-color: #3ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="308.0" layoutY="283.0" text="Histories" />
+         </children>
+      </Pane>
+      <Pane fx:id="business" layoutX="10.0" layoutY="10.0" prefHeight="607.0" prefWidth="728.0" style="-fx-background-color: #3ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="285.0" layoutY="304.0" text="Bussiness" />
+         </children>
+      </Pane>
+      <AnchorPane fx:id="listPro" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="List pro" />
+            <TableView fx:id="table" layoutX="2.0" layoutY="274.0" prefHeight="333.0" prefWidth="722.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="274.0">
+              <columns>
+                  <TableColumn fx:id="col_id" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="col_name" prefWidth="254.0" text="name" />
+                <TableColumn fx:id="col_quantity" prefWidth="82.0" text="Quantity" />
+                  <TableColumn fx:id="col_price" prefWidth="92.0" text="Each Price" />
+                  <TableColumn fx:id="col_made_in" prefWidth="246.0" text="Made in" />
+              </columns>
+            </TableView>
+            <FontAwesomeIconView />
+            <GridPane layoutX="109.0" layoutY="96.0" prefHeight="158.0" prefWidth="530.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="70.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="pro_price" promptText="Each Price">
+                     <padding>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="pro_made" promptText="Made In" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="pro_quantity" promptText="Quantity" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="pro_name" promptText="Product Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXButton buttonType="RAISED" graphicTextGap="22.0" onAction="#selectProductList" prefHeight="31.0" prefWidth="345.0" ripplerFill="#750404" style="-fx-background-color: #750404;" text="Select" textFill="#d7c5c5" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView alignment="BASELINE_LEFT" graphicTextGap="11.0" icon="ICON_EDIT" lineSpacing="11.0" textFill="WHITE" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </GridPane.margin>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" graphicTextGap="22.0" onAction="#editProductList" prefHeight="31.0" prefWidth="371.0" ripplerFill="#750404" style="-fx-background-color: #750404;" text="Upload" textFill="#d7c5c5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView alignment="BASELINE_LEFT" graphicTextGap="11.0" icon="ICON_UPLOAD" lineSpacing="11.0" textFill="WHITE" />
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+        <AnchorPane fx:id="navbar" layoutX="1.0" prefHeight="47.0" prefWidth="1031.0" style="-fx-background-color: #333;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <effect>
+                <Lighting bumpInput="$null" diffuseConstant="1.44" specularConstant="0.96" specularExponent="40.0" surfaceScale="10.0">
+                    <light>
+                        <!--<Light.Distant color="#612e2e" />-->
+                    </light>
+                </Lighting>
+            </effect>
+         <children>
+            <Pane layoutX="783.0" prefHeight="47.0" prefWidth="359.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton layoutX="125.0" layoutY="3.0" prefHeight="42.0" prefWidth="114.0" text="Admin" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="WHITE" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </FontAwesomeIconView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="242.0" layoutY="3.0" prefHeight="42.0" prefWidth="114.0" text="LogOut" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_OFF">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="WHITE" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </FontAwesomeIconView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="8.0" layoutY="3.0" onAction="#Home" prefHeight="42.0" prefWidth="114.0" text="Home" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_HOME">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="WHITE" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </FontAwesomeIconView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Pane>
+         </children>
+        </AnchorPane>
+      <AnchorPane fx:id="sidebar" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0C39FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="1028.0" prefWidth="54.0" style="-fx-background-color: #333;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" lineSpacing="1.0" onAction="#NewPro" prefHeight="47.0" prefWidth="304.0" ripplerFill="#e4e3e300" text="New Products" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView graphicTextGap="22.0" icon="ICON_PLUS" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" layoutY="47.0" lineSpacing="1.0" onAction="#ListPro" prefHeight="47.0" prefWidth="304.0" ripplerFill="#ffffff00" text="List of Products" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_LIST_OL" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font></FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" layoutY="94.0" lineSpacing="1.0" onAction="#Sales" prefHeight="47.0" prefWidth="304.0" ripplerFill="#ffffff00" text="Sales" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_SUITCASE" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font></FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" layoutY="141.0" lineSpacing="1.0" onAction="#Orders" prefHeight="47.0" prefWidth="304.0" ripplerFill="#ffffff00" text="Orders" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_TRUCK" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font></FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" layoutY="188.0" lineSpacing="1.0" onAction="#FinishedPro" prefHeight="47.0" prefWidth="304.0" ripplerFill="#ffffff00" text="Almost Finished Products" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_BELL" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font></FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" layoutY="235.0" lineSpacing="1.0" onAction="#Bussiness" prefHeight="47.0" prefWidth="304.0" ripplerFill="#ffffff00" text="Business Analysis" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView graphicTextGap="42.0" icon="ICON_BAR_CHART" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font></FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="42.0" layoutY="282.0" lineSpacing="1.0" onAction="#History" prefHeight="47.0" prefWidth="304.0" ripplerFill="#ffffff00" text="Histories" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_RANDOM" textFill="WHITE">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="histories" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="hi" alignment="CENTER" contentDisplay="CENTER" layoutY="47.0" prefHeight="66.0" prefWidth="292.0" text="Histories" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table11" layoutX="3.0" layoutY="116.0" prefHeight="491.0" prefWidth="728.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+               <columns>
+                  <TableColumn fx:id="col_id11" prefWidth="50.0" text="ID" />
+                  <TableColumn fx:id="col_name11" prefWidth="233.0" text="name" />
+                  <TableColumn fx:id="col_quantity11" prefWidth="103.0" text="Quantity" />
+                  <TableColumn fx:id="col_price11" prefWidth="92.0" text="Each Price" />
+                  <TableColumn fx:id="col_made_in11" prefWidth="246.0" text="Made in" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="homepage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="77.0" prefHeight="59.0" prefWidth="663.0" text="Welcome to your stock" textAlignment="CENTER">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="205.0" layoutY="154.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0C39FF;" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="154.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="268.0" layoutY="1.0" prefHeight="152.0" prefWidth="269.0" style="-fx-background-color: #eee;" text="Add New Product" textFill="#2f2c2c" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="33.0" lineSpacing="14.0" onAction="#NewPro" prefHeight="152.0" prefWidth="528.0" ripplerFill="#fff1f1" text="Add Product" textFill="WHITE" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView alignment="BASELINE_LEFT" graphicTextGap="38.0" icon="ICON_PLUS_SIGN" lineSpacing="11.0" textFill="WHITE" />
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="31.0" />
+                     </font>
+                  </JFXButton>
+                  <AnchorPane layoutX="-2.0" layoutY="167.0" prefHeight="47.0" prefWidth="528.0" style="-fx-background-color: #171c2a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="153.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0C39FF;" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="397.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="259.0" layoutY="1.0" prefHeight="152.0" prefWidth="269.0" style="-fx-background-color: #eee;" text="Watch My History" textFill="#2f2c2c" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="33.0" lineSpacing="14.0" onAction="#History" prefHeight="158.0" prefWidth="528.0" ripplerFill="#fff1f1" text="My History" textFill="WHITE" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView alignment="BASELINE_LEFT" graphicTextGap="38.0" icon="ICON_RANDOM" lineSpacing="11.0" textFill="WHITE" />
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="31.0" />
+                     </font>
+                  </JFXButton>
+                  <AnchorPane layoutX="-2.0" layoutY="167.0" prefHeight="47.0" prefWidth="528.0" style="-fx-background-color: #171c2a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="153.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="newPro" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="n_pro_product_name" layoutX="200.0" layoutY="127.0" prefHeight="35.0" prefWidth="558.0" promptText="Product Name" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" layoutX="200.0" layoutY="505.0" prefHeight="47.0" prefWidth="598.0" style="-fx-background-color: #0C39FF;" text="Add Product" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXButton>
+            <JFXTextField fx:id="n_pro_quantity" layoutX="200.0" layoutY="168.0" prefHeight="35.0" prefWidth="663.0" promptText="Quantity" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="66.0" prefHeight="66.0" prefWidth="462.0" text="New Products" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="n_pro_type" layoutX="200.0" layoutY="208.0" prefHeight="35.0" prefWidth="328.0" promptText="Type">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="n_pro_each_price" layoutX="205.0" layoutY="251.0" prefHeight="31.0" prefWidth="319.0" promptText="Each Price" />
+            <JFXTextField fx:id="n_pro_bought_from" layoutX="200.0" layoutY="287.0" prefHeight="31.0" prefWidth="328.0" promptText="Bought From" />
+            <JFXTextField fx:id="n_pro_purchased_cost" layoutX="205.0" layoutY="328.0" prefHeight="31.0" prefWidth="328.0" promptText="Purchased Cost" />
+            <JFXTextArea fx:id="n_pro_description" layoutX="205.0" layoutY="376.0" prefHeight="47.0" prefWidth="319.0" promptText="Description" />
+            <JFXDatePicker fx:id="n_pro_purchased_date" layoutX="205.0" layoutY="432.0" prefHeight="31.0" prefWidth="328.0" promptText="Purchased Date" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sales" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="483.0" prefHeight="47.0" prefWidth="598.0" style="-fx-background-color: #0C39FF;" text="Sell Product" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="60.0" prefHeight="66.0" prefWidth="462.0" text="New sales" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="s_pro_product_name1" layoutX="198.0" layoutY="141.0" prefHeight="35.0" prefWidth="328.0" promptText="Product Name">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="s_pro_quantity1" layoutX="198.0" layoutY="182.0" prefHeight="35.0" prefWidth="328.0" promptText="Quantity">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="s_pro_type1" layoutX="198.0" layoutY="212.0" prefHeight="35.0" prefWidth="328.0" promptText="Type">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="s_pro_each_price1" layoutX="203.0" layoutY="255.0" prefHeight="31.0" prefWidth="319.0" promptText="Each Price" />
+            <JFXTextField fx:id="s_pro_bought_from1" layoutX="198.0" layoutY="291.0" prefHeight="31.0" prefWidth="328.0" promptText="Bought From" />
+            <JFXTextField fx:id="s_pro_purchased_cost1" layoutX="203.0" layoutY="332.0" prefHeight="31.0" prefWidth="328.0" promptText="Purchased Cost" />
+            <JFXTextArea fx:id="s_pro_description1" layoutX="203.0" layoutY="380.0" prefHeight="47.0" prefWidth="319.0" promptText="Description" />
+            <JFXDatePicker fx:id="s_pro_purchased_date1" layoutX="203.0" layoutY="436.0" prefHeight="31.0" prefWidth="328.0" promptText="Purchased Date" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="orders" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField layoutX="200.0" layoutY="237.0" prefHeight="35.0" prefWidth="558.0" promptText="Product Name" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="483.0" prefHeight="47.0" prefWidth="598.0" style="-fx-background-color: #0C39FF;" text="Order Product" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXButton>
+            <JFXTextField layoutX="200.0" layoutY="326.0" prefHeight="35.0" prefWidth="663.0" promptText="Quantity" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </JFXTextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="82.0" prefHeight="66.0" prefWidth="462.0" text="New Orders" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="finishedPro" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="186.0" layoutY="50.0" prefHeight="66.0" prefWidth="292.0" text="Alert For Almost finished products" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <TableView fx:id="finised_table" layoutX="3.0" layoutY="116.0" prefHeight="491.0" prefWidth="728.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+               <columns>
+                  <TableColumn fx:id="col_id1" prefWidth="50.0" text="ID" />
+                  <TableColumn fx:id="col_name1" prefWidth="233.0" text="name" />
+                  <TableColumn fx:id="col_quantity1" prefWidth="103.0" text="Quantity" />
+                  <TableColumn fx:id="col_price1" prefWidth="92.0" text="Each Price" />
+                  <TableColumn fx:id="col_made_in1" prefWidth="246.0" text="Made in" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
